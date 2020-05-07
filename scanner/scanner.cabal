@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: aa0227eecc125095dcc330e24da418c89198fa15919a9b29c4146fe8376a6e23
+-- hash: f7b6d40f0c171b0ee5ca79bd4eaa4e7428f9bc27ba1b7c37b2db55ba7ef27149
 
 name:           scanner
 version:        0.1.0.0
@@ -53,6 +53,9 @@ library
     , text
     , text-metrics
     , time
+    , wai
+    , wai-cors
+    , wai-extra
     , warp
   default-language: Haskell2010
 
@@ -82,6 +85,9 @@ executable scanner-exe
     , text
     , text-metrics
     , time
+    , wai
+    , wai-cors
+    , wai-extra
     , warp
   default-language: Haskell2010
 
@@ -115,5 +121,8 @@ test-suite scanner-test
     , text
     , text-metrics
     , time
+    , wai
+    , wai-cors
+    , wai-extra
     , warp
   default-language: Haskell2010
