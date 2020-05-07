@@ -1,0 +1,119 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: aa0227eecc125095dcc330e24da418c89198fa15919a9b29c4146fe8376a6e23
+
+name:           scanner
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/scanner#readme>
+homepage:       https://github.com/githubuser/scanner#readme
+bug-reports:    https://github.com/githubuser/scanner/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/scanner
+
+library
+  exposed-modules:
+      Analyser
+      Rekognition
+      Server
+  other-modules:
+      Paths_scanner
+  hs-source-dirs:
+      src
+  default-extensions: BlockArguments DataKinds DeriveGeneric DerivingStrategies EmptyCase GeneralizedNewtypeDeriving LambdaCase NamedFieldPuns NoImplicitPrelude NumericUnderscores OverloadedLists OverloadedStrings RankNTypes RecordWildCards ScopedTypeVariables TemplateHaskell TupleSections TypeApplications TypeOperators
+  ghc-options: -Wall -Wsemigroup -Wmissing-monadfail-instances -Wnoncanonical-monoid-instances -Wnoncanonical-monad-instances -Wincomplete-record-updates -Wpartial-fields -Wimplicit-prelude -Wmissing-home-modules -Werror
+  build-depends:
+      aeson
+    , amazonka
+    , amazonka-core
+    , amazonka-rekognition
+    , base >=4.7 && <5
+    , bytestring
+    , conduit-extra
+    , exceptions
+    , lens
+    , protolude
+    , servant
+    , servant-multipart
+    , servant-server
+    , text
+    , text-metrics
+    , time
+    , warp
+  default-language: Haskell2010
+
+executable scanner-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_scanner
+  hs-source-dirs:
+      app
+  default-extensions: BlockArguments DataKinds DeriveGeneric DerivingStrategies EmptyCase GeneralizedNewtypeDeriving LambdaCase NamedFieldPuns NoImplicitPrelude NumericUnderscores OverloadedLists OverloadedStrings RankNTypes RecordWildCards ScopedTypeVariables TemplateHaskell TupleSections TypeApplications TypeOperators
+  ghc-options: -Wall -Wsemigroup -Wmissing-monadfail-instances -Wnoncanonical-monoid-instances -Wnoncanonical-monad-instances -Wincomplete-record-updates -Wpartial-fields -Wimplicit-prelude -Wmissing-home-modules -Werror -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , amazonka
+    , amazonka-core
+    , amazonka-rekognition
+    , base >=4.7 && <5
+    , bytestring
+    , conduit-extra
+    , exceptions
+    , lens
+    , protolude
+    , scanner
+    , servant
+    , servant-multipart
+    , servant-server
+    , text
+    , text-metrics
+    , time
+    , warp
+  default-language: Haskell2010
+
+test-suite scanner-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      AnalyserSpec
+      RekognitionSpec
+      Paths_scanner
+  hs-source-dirs:
+      test
+  default-extensions: BlockArguments DataKinds DeriveGeneric DerivingStrategies EmptyCase GeneralizedNewtypeDeriving LambdaCase NamedFieldPuns NoImplicitPrelude NumericUnderscores OverloadedLists OverloadedStrings RankNTypes RecordWildCards ScopedTypeVariables TemplateHaskell TupleSections TypeApplications TypeOperators
+  ghc-options: -Wall -Wsemigroup -Wmissing-monadfail-instances -Wnoncanonical-monoid-instances -Wnoncanonical-monad-instances -Wincomplete-record-updates -Wpartial-fields -Wimplicit-prelude -Wmissing-home-modules -Werror -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , amazonka
+    , amazonka-core
+    , amazonka-rekognition
+    , base >=4.7 && <5
+    , bytestring
+    , conduit-extra
+    , exceptions
+    , hspec
+    , lens
+    , protolude
+    , scanner
+    , servant
+    , servant-multipart
+    , servant-server
+    , text
+    , text-metrics
+    , time
+    , warp
+  default-language: Haskell2010
